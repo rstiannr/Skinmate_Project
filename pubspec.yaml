@@ -1,0 +1,35 @@
+name: skinmate
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  assets: ^0.0.2
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+  path_provider: ^2.0.10
+  sqflite: ^2.0.0+4
+  table_calendar: ^3.0.0
+  keyboard_avoider: ^0.2.0
+  shared_preferences: ^2.5.3
+  path: ^1.9.1
+
+  
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  assets:
+    - assets/logo.png
+    - assets/skinmate_login.png
+    - assets/instagram.png
+    - assets/google.png
+    - assets/twitter.png
+  uses-material-design: true
