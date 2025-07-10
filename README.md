@@ -1,120 +1,139 @@
-<div align="center">
-  <img src="https://github.com/rstiannr/Skinmate_Project/blob/main/assets/logo.png?raw=true" alt="SkinMate Logo" width="150"/>
-  <p>Your personal AI-powered skincare buddy for healthier, happier skin!</p>
-</div>
+# 🌸 SkinMate: Your Personalized Skincare Journey
 
 ---
 
-SkinMate is an innovative AI-powered skincare application designed to empower users with a deeper understanding of their skin. It provides **personalized skincare product recommendations** and helps you build a **consistent skincare routine** tailored just for you. With its seamless integration of skin analysis, reminders, a vibrant community, and e-commerce, SkinMate is your all-in-one digital companion on your journey to radiant skin.
+**SkinMate** is a beautifully designed Flutter application dedicated to empowering users to take control of their skincare routines, connect with a vibrant community, and manage their personal wellness journey. More than just a tracker, SkinMate fosters a supportive environment where users can share experiences, discover new insights, and achieve their best skin.
 
 ---
 
-## 🚀 Dive Into SkinMate
+## ✨ Features
 
-Explore the interactive prototypes and source code:
+SkinMate offers a comprehensive suite of features crafted to provide an intuitive and engaging user experience:
 
-* **🎨 UI Prototype:**
-    * [Figma UI Prototype](https://www.figma.com/proto/25Lu9ODagL7m4LJ5ko6kCR/Apps-Mobile-Prototype--Skinmate-?node-id=114-12606&t=A5YTInCwfWJ4QjVm-1)
-    * [UI Files on GitHub](https://github.com/rstiannr/Skinmate_Project/tree/main/Prototype_UI_Figma)
-
-* **📱 Apps Prototype:**
-    * [Source Code & Project](https://github.com/rstiannr/Skinmate_Project)
-
----
-
-## ✨ Features That Glow
-
-SkinMate is packed with features to help you achieve your skin goals:
-
-* **Smart Skin Analysis:** Discover your skin's unique needs through our advanced **face scan technology (AI)** or by answering a **guided questionnaire**.
-* **Personalized Reminders:** Never miss a step in your routine with **customized reminders** that fit your schedule and skin type.
-* **Tailored Product Recommendations:** Find products that truly work for you, backed by **data-driven analysis** of your skin.
-* **Vibrant Community Forum:** Connect with others in **skin-type based communities**. Share reviews, ask questions, and support each other on your skincare journeys.
-* **Seamless E-Commerce Integration:** Easily **purchase recommended products** directly within the app.
-* **Flexible Freemium Model:** Enjoy essential features for free, with access to advanced capabilities like **AI-based analysis** and extended reminders available through a **premium subscription**.
+* **Splash Screen**: A welcoming initial display showcasing the app's identity before seamlessly transitioning to the login experience. ([\`lib/splash_screen.dart\`](lib/splash_screen.dart))
+* **Secure Authentication**: Robust user registration, login, and account management functionalities ensure a secure and personalized experience. ([\`lib/auth/login_screen.dart\`](lib/auth/login_screen.dart), [\`lib/auth/register_screen.dart\`](lib/auth/register_screen.dart))
+* **Quick Profile Setup**: A guided onboarding process where users answer a few simple questions to tailor their SkinMate experience from the start. ([\`lib/quick/quick_question_page.dart\`](lib/quick/quick_question_page.dart))
+* **Personalized Home Screen**: Your daily hub featuring customized routine reminders, helpful skincare tips, and engaging fun facts. ([\`lib/home/home_screen.dart\`](lib/home/home_screen.dart))
+* **Intuitive Routine Tracker**: Effortlessly log and manage your morning and evening skincare routines, helping you stay consistent and track progress. ([\`lib/tracker/tracker_screen.dart\`](lib/tracker/tracker\_screen.dart), [\`lib/tracker/edit_tracker_screen.dart\`](lib/tracker/edit_tracker_screen.dart))
+* **Engaging Community Hub**: Connect with fellow skincare enthusiasts! Share updates, post questions, and interact with others' content through likes and comments. ([\`lib/comunitas/comunitas_screen.dart\`](lib/comunitas/comunitas_screen.dart), [\`lib/comunitas/comment_screen.dart\`](lib/comunitas/comment_screen.dart))
+* **Comprehensive Profile Management**: Easily view and update your personal information and preferences within the app. ([\`lib/Profile/profile_screen.dart\`](lib/Profile/profile_screen.dart))
+* **User Control Panel (Admin View)**: A dedicated interface for managing users, demonstrating administrative functionalities. ([\`lib/auth/users_screen.dart\`](lib/auth/users_screen.dart))
 
 ---
 
-## 🎯 Our Strategy to Shine
+## 📁 Project Structure
 
-### Go-To-Market Plan
+```
+├── android/                # Android native project files
+├── assets/                 # App images and other assets
+├── ios/                    # iOS native project files
+├── lib/                    # Main Dart code for the Flutter app
+│   ├── auth/               # Authentication screens and logic
+│   ├── comunitas/          # Community features (posts, comments)
+│   ├── database/           # Database helpers
+│   ├── home/               # Home screen
+│   ├── Profile/            # User profile screens
+│   ├── quick/              # Quick onboarding/questionnaire
+│   ├── tracker/            # Tracker and product screens
+│   ├── utils/              # Utilities, themes, and routes
+│   ├── widgets/            # Custom reusable widgets
+│   ├── main.dart           # App entry point
+│   └── splash_screen.dart  # Splash screen widget
+├── linux/                  # Linux native project files
+├── macos/                  # macOS native project files
+├── web/                    # Web support files
+├── windows/                # Windows native project files
+├── pubspec.yaml            # Flutter project configuration
+├── README.md               # Project documentation
+└── ...                     # Other configuration and
 
-We're targeting skincare enthusiasts aged **18-35**, primarily **women in urban areas** (students, freelancers, young professionals, moms) who are active on Instagram & TikTok and familiar with skincare communities.
+```
+---
 
-Our **launch plan** includes:
+## 🚀 Navigation Flow
 
-* Engaging social media teaser campaigns
-* An exclusive beta testing program
-* A captivating webinar launch featuring influencers and dermatologists
-* Exciting referral incentives and premium trial offers
+Navigate through SkinMate with this intuitive flow:
 
-### Key Metrics for Success
-
-| KPI                       | Target                                 |
-| :------------------------ | :------------------------------------- |
-| Users Acquired            | 10,000 in the first 6 months           |
-| User Retention            | Increase from 0% to 50% in 3 months    |
-| E-commerce Transactions   | 500 in the first 6 months              |
-| App Rating                | Maintain $\geq$4.5 on App Store & Play Store |
+1.  **SplashScreen** → Redirects to the `/login` screen.
+2.  **Login/Register**
+    * Successful **Registration** guides users to `/quick_question` for personalized onboarding.
+    * Successful **Login** takes users directly to the `/comunitas` (community) feed.
+3.  **Quick Question**
+    * Upon completing the onboarding questions, users are seamlessly directed to the `/home` screen.
+4.  **Home**
+    * Access the **Tracker**, **Profile**, and **Community** sections conveniently via the bottom navigation bar.
+5.  **Tracker**
+    * Effortlessly track and modify your daily routines.
+6.  **Comunitas**
+    * Engage with the community: create new posts, like, and comment on existing content.
+7.  **Profile**
+    * View and update your personal user profile details.
 
 ---
 
-## 💼 Business & Tech Insights
+## 🗄️ Database
 
-### Business Model Canvas Highlights
+SkinMate leverages **SQLite** for efficient local data storage:
 
-* **Customer Segments:** Skin-aware young adults eager for guidance and education.
-* **Value Proposition:** A personalized skincare companion that educates and guides users towards healthier skin.
-* **Channels:** Instagram, TikTok, dedicated skincare forums, and app stores.
-* **Revenue Streams:** In-app purchases, premium subscriptions, and affiliate commissions.
-
-### Tech Highlights
-
-SkinMate is built on a robust and scalable tech stack:
-
-* **AI + NLP:** For intelligent, typo-tolerant product search and accurate skin analysis.
-* **CDN + Microservices:** Ensuring faster performance and a highly scalable infrastructure.
-* **Multi-channel OTP Verification & Biometric Login:** For secure and convenient user access.
+* Utilizes a dedicated database helper class ([\`lib/database/database_helper.dart\`](lib/database/database_helper.dart)) for seamless database interactions.
+* Stores essential application data, including user profiles, skincare routines, community posts, comments, and likes.
 
 ---
 
-## 🗺️ Roadmap to Radiance
+## 💡 Proposal and Presentation
 
-Here's a glimpse of what's next for SkinMate:
+Explore the conceptual foundation and detailed planning behind SkinMate:
 
-* **Q2 2025:** Initial onboarding flows, basic reminders, and questionnaire-based skin analysis.
-* **Q3 2025:** Integration of AI photo analysis, launch of premium subscriptions, and payment integrations.
-* **Q4 2025:** Introduction of the community forum, purchase history tracking, and expanded e-commerce features.
-* **Q2 2026:** Expansion into health advisory services and strategic partnerships with digital health providers.
+* **Project Proposal & Pitch Deck**: Dive deeper into the project's vision, objectives, and proposed solutions.
+    * [View Proposal and PPT](https://github.com/rstiannr/Skinmate_Project/tree/main/Proposal)
 
 ---
 
-## ✅ Validation & Testing
+## 🎨 UI/UX Design
 
-We believe in continuous improvement through user feedback:
+Discover the visual aesthetics and user experience design of SkinMate:
 
-* **Usability Tests:** Rigorous testing with diverse personas (students, freelancers, moms) to refine the user experience.
-* **A/B Testing:** Insights from tests like comparing "Buy Now" vs "Add to Cart" buttons helped us optimize conversion — users preferred the safer, more familiar language.
-
----
-
-## 🗣️ Our Communication Style
-
-SkinMate communicates like your friendly, supportive skincare buddy. Our tone is **casual, friendly, and encouraging**, always there to help you on your journey.
-
-* "Let’s explore your skin type so you don’t pick the wrong product!"
-* "Start small today for healthier skin."
+* **Figma UI Design**: Explore the complete user interface and interactive prototypes.
+    * [Explore UI Design on Figma](https://github.com/rstiannr/Skinmate_Project/tree/main/Prototype_UI_Figma)
 
 ---
 
-## ✨ The SkinMate Team
+## 🏁 Getting Started
 
-* Amriza Saskirana
-* Resti Anggraini
-* Afrida Eka PP
+To run SkinMate locally, follow these simple steps:
 
-## 🌐 Explore More of My Work
+1.  **Install Dependencies**:
 
-Curious to see more? Check out my [Digital Portfolio on Notion](https://spectrum-resolution-3e6.notion.site/Digital-Portfolio-21fd805f6a4a806697b8fa3f1b17b39b).
+    ```bash
+    flutter pub get
+    ```
+
+2.  **Run the App**:
+
+    ```bash
+    flutter run
+    ```
+
+    Alternatively, use the "Run" button in your preferred IDE (e.g., VS Code, Android Studio).
+3.  **Assets**:
+    Ensure all images located in the \`assets/images/\` directory are present and correctly declared in your \`pubspec.yaml\` file.
+
+---
+
+## 🛠️ Customization
+
+SkinMate is designed with flexibility in mind:
+
+* **App Theme**: Easily modify the application's visual theme and color palette in ([\`lib/utils/app_theme.dart\`](lib/utils/app_theme.dart)).
+* **Route Management**: Add or adjust navigation routes within the app by editing ([\`lib/utils/app_routes.dart\`](lib/utils/app_routes.dart)).
+* **Onboarding Questions**: Personalize the quick setup process by modifying the questions in ([\`lib/quick/quick_question_page.dart\`](lib/quick/quick_question_page.dart)).
+
+---
+
+## 💼 My Digital Portfolio
+
+For more of my work and projects, visit my digital portfolio:
+
+* [RSTIANNR's Digital Portfolio](https://spectrum-resolution-3e6.notion.site/Digital-Portfolio-21fd805f6a4a806697b8fa3f1b17b39b)
 
 ---
